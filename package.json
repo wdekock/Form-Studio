@@ -1,0 +1,27 @@
+{
+  "name": "form-studio-monorepo-workspace",
+  "version": "1.0.0",
+  "description": "Enterprise State-Driven Low-Code Form Engine Node Workspace",
+  "private": true,
+  "workspaces": [
+    "studio-ui",
+    "example-app"
+  ],
+  "scripts": {
+    "install:all": "npm install && pip install -r requirements.txt",
+    "ui:dev": "npm run dev --workspace=example-app",
+    "api:dev": "cd studio-api && python main.py"
+  },
+  "dependencies": {
+    "@bpmn-io/form-js-editor": "^1.7.0",
+    "@bpmn-io/form-js-viewer": "^1.7.0",
+    "@mui/icons-material": "^5.15.0",
+    "@mui/material": "^5.15.0",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@xyflow/react": "^12.0.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
