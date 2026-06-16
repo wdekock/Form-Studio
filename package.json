@@ -10,7 +10,13 @@
   "scripts": {
     "install:all": "npm install && pip install -r requirements.txt",
     "ui:dev": "npm run dev --workspace=example-app",
-    "api:dev": "cd studio-api && python main.py"
+    "api:dev": "cd studio-api && python main.py",
+    "test:all": "npm run test:api && npm run test:ui",
+    "test:api": "pytest studio-api/tests/ -v",
+    "test:api:coverage": "pytest studio-api/tests/ --cov=studio_api/studio_node --cov-report=html --cov-report=term-missing",
+    "test:ui": "npm run test --workspace=studio-ui && npm run test --workspace=example-app",
+    "test:ui:watch": "npm run test:watch --workspace=studio-ui",
+    "test:ui:coverage": "npm run test:coverage --workspace=studio-ui"
   },
   "dependencies": {
     "@bpmn-io/form-js-editor": "^1.7.0",
