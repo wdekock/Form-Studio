@@ -10,9 +10,7 @@ import pytest
 from fastapi import status
 from typing import Dict, Any
 
-# Skip all router tests for now due to TestClient compatibility issue
-# Will be fixed in a follow-up when test dependencies are fully resolved
-pytestmark = pytest.mark.skip(reason="TestClient setup - see TESTING.md for manual test instructions")
+# Router tests are enabled; tests use httpx ASGI transport via the `client` fixture.
 
 
 class TestSaveNodeConfig:
